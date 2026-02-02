@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WiFi Hotspot Inquiries</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__wrap">
+      <div class="brand">
+        <div class="brand__logo">📶</div>
+        <div>
+          <h1 class="brand__title">559 WiFi Hotspot</h1>
+          <p class="brand__subtitle">Fast, reliable internet — inquiry & support</p>
+        </div>
+      </div>
+      <a class="btn btn--ghost" href="#inquiry">Make an Inquiry</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <h2>Need a Hotspot Plan?</h2>
+          <p class="muted">
+            Tell us what you need and we’ll get back to you quickly with available plans,
+            coverage info, and setup details.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <h3>✅ Quick Reply</h3>
+              <p class="muted">We respond via email, SMS, or Messenger (your choice).</p>
+            </div>
+            <div class="card">
+              <h3>✅ For Home or Travel</h3>
+              <p class="muted">Short-term or monthly options, depending on availability.</p>
+            </div>
+            <div class="card">
+              <h3>✅ Easy Setup</h3>
+              <p class="muted">We can guide you through installation and troubleshooting.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__panel" id="inquiry">
+          <h2>Inquiry Form</h2>
+          <p class="muted">Fill in the details and we’ll contact you.</p>
+
+          <!-- Replace action with your Formspree endpoint -->
+          <form id="inquiryForm"
+                action="https://formspree.io/f/xlglwley"
+                method="POST">
+            <div class="grid">
+              <label>
+                Full Name*
+                <input name="name" type="text" required placeholder="Juan Dela Cruz" />
+              </label>
+
+              <label>
+                Contact Number*
+                <input name="phone" type="tel" required placeholder="+63 9xx xxx xxxx" />
+              </label>
+
+              <label class="full">
+                Email (optional)
+                <input name="email" type="email" placeholder="you@email.com" />
+              </label>
+
+              <label>
+                Location / Address*
+                <input name="location" type="text" required placeholder="Barangay, City" />
+              </label>
+
+              <label>
+                Preferred Contact*
+                <select name="preferred_contact" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Email</option>
+                  <option>SMS</option>
+                  <option>Call</option>
+                  <option>Messenger</option>
+                </select>
+              </label>
+
+              <label>
+                Intended Use
+                <select name="use_case">
+                  <option>Home</option>
+                  <option>Work/Remote</option>
+                  <option>Travel</option>
+                  <option>Backup Internet</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label>
+                Number of Users
+                <input name="users" type="number" min="1" max="100" value="1" />
+              </label>
+
+              <label>
+                Budget Range
+                <select name="budget">
+                  <option>₱500–₱999</option>
+                  <option>₱1,000–₱1,999</option>
+                  <option>₱2,000–₱3,999</option>
+                  <option>₱4,000+</option>
+                </select>
+              </label>
+
+              <label class="full">
+                Message / Details*
+                <textarea name="message" required rows="5"
+                  placeholder="Tell us your requirements (speed, coverage, schedule, etc.)"></textarea>
+              </label>
+
+              <!-- Helps reduce spam (honeypot) -->
+              <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" />
+
+              <!-- Optional: subject and redirect -->
+              <input type="hidden" name="_subject" value="New WiFi Hotspot Inquiry" />
+              <input type="hidden" name="_redirect" value="thank-you.html" />
+
+              <div class="full actions">
+                <button class="btn" type="submit">Send Inquiry</button>
+                <p id="formStatus" class="muted"></p>
+              </div>
+            </div>
+          </form>
+
+          <p class="note">
+            By submitting, you agree we may contact you about your inquiry.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>How soon will you respond?</summary>
+        <p>Usually within 24 hours (often faster during business hours).</p>
+      </details>
+      <details>
+        <summary>Do you offer installation?</summary>
+        <p>We can provide setup guidance and may offer installation depending on area.</p>
+      </details>
+      <details>
+        <summary>Is this prepaid or postpaid?</summary>
+        <p>It depends on the plan option you choose — tell us your preference.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__wrap">
+      <p class="muted">© <span id="year"></span> WiFi Hotspot Inquiries</p>
+      <p class="muted">Support: acemomoxke@email.com • +63 932 591 2081</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

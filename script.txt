@@ -1,0 +1,8 @@
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const form = document.getElementById("inquiryForm");
+const statusEl = document.getElementById("formStatus");
+
+form.addEventListener("submit", () => {
+  statusEl.textContent = "Sending… please wait.";
+});
